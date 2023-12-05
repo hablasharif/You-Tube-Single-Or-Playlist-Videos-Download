@@ -1,4 +1,58 @@
+#############################################################
 
+from pytube import YouTube
+# from tqdm import tqdm
+# import re
+# import requests
+
+# # List of YouTube URLs
+# urls = [
+# "https://www.youtube.com/watch?v=rsIInabhd2E&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=32&pp=iAQB","https://www.youtube.com/watch?v=8llCBZ3ymwg&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=33&pp=iAQB","https://www.youtube.com/watch?v=GvX7hhyLhvo&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=34&pp=iAQB","https://www.youtube.com/watch?v=HyODBevBzRs&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=35&pp=iAQB","https://www.youtube.com/watch?v=xTDCThaWqX0&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=36&pp=iAQB","https://www.youtube.com/watch?v=znY_TZXqmCo&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=37&pp=iAQB","https://www.youtube.com/watch?v=y-AZQhvA5Wk&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=38&pp=iAQB","https://www.youtube.com/watch?v=LlTUJpBvzLM&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=39&pp=iAQB","https://www.youtube.com/watch?v=2H_3-lxP7-s&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=40&pp=iAQB","https://www.youtube.com/watch?v=R8CB2XFB0mA&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=41&pp=iAQB","https://www.youtube.com/watch?v=8ZTq78ggLZk&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=42&pp=iAQB","https://www.youtube.com/watch?v=gnIaxr_Dixk&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=43&pp=iAQB","https://www.youtube.com/watch?v=ep3IrPvtYes&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=44&pp=iAQB","https://www.youtube.com/watch?v=eKezCc5lczg&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=45&pp=iAQB","https://www.youtube.com/watch?v=n_YPb0f7yF0&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=46&pp=iAQB","https://www.youtube.com/watch?v=VECvy45rW3Y&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=47&pp=iAQB","https://www.youtube.com/watch?v=VpyNZFn644k&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=48&pp=iAQB","https://www.youtube.com/watch?v=K34J8KMRLUY&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=49&pp=iAQB","https://www.youtube.com/watch?v=pYtLFLdC-C8&list=PLNMnAEqLBwmodUM0HlExxtYERNS2YARhW&index=50&pp=iAQB"
+# ]
+
+# # Output folder
+# output_folder = 'downloaded_videos'
+
+# # Create the output folder if it doesn't exist
+# import os
+# os.makedirs(output_folder, exist_ok=True)
+
+# def download_highest_resolution_video(url):
+#     try:
+#         yt = YouTube(url)
+#         streams = yt.streams.filter(progressive=True, file_extension='mp4')
+        
+#         # Sort streams by resolution in descending order to get the highest resolution
+#         streams = sorted(streams, key=lambda x: int(x.resolution[:-1]), reverse=True)
+        
+#         if not streams:
+#             raise Exception(f"No suitable stream found for {yt.title}")
+        
+#         stream = streams[0]  # Get the first (highest resolution) stream
+#         video_title = re.sub(r'[\/:*?"<>|]', '', yt.title)  # Remove invalid characters
+#         print(f"Downloading: {video_title} ({stream.resolution})")
+
+#         file_path = os.path.join(output_folder, f"{video_title}.mp4")
+#         response = requests.get(stream.url, stream=True)
+
+#         total_size = int(response.headers.get('content-length', 0))
+#         block_size = 1024
+#         progress_bar = tqdm(total=total_size, unit='B', unit_scale=True, unit_divisor=1024, dynamic_ncols=True)
+        
+#         with open(file_path, 'wb') as file:
+#             for data in response.iter_content(block_size):
+#                 file.write(data)
+#                 progress_bar.update(len(data))
+        
+#         progress_bar.close()
+#         print(f"Downloaded: {video_title}")
+#     except Exception as e:
+#         print(f"Error downloading {url}: {e}")
+
+# # Download videos with the highest available resolution for each URL
+# for url in urls:
+#     download_highest_resolution_video(url)
+#################################################
 # import pytube
 # import tqdm
 # import os  # Import the 'os' module for file and directory operations
