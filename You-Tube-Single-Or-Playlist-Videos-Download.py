@@ -10,6 +10,7 @@ def download_youtube_video(video_url, download_path):
         video_url: The URL of the YouTube video to download.
         download_path: The path where the video will be saved.
     """
+    os.makedirs(download_path, exist_ok=True)
     os.chdir(download_path)
     video = pytube.YouTube(video_url)
     video.streams.get_highest_resolution().download()
@@ -21,6 +22,7 @@ def download_youtube_playlist(playlist_url, download_path):
         playlist_url: The URL of the YouTube playlist to download.
         download_path: The path where the playlist will be saved.
     """
+    os.makedirs(download_path, exist_ok=True)
     os.chdir(download_path)
     playlist = pytube.Playlist(playlist_url)
     for video in tqdm.tqdm(playlist.videos):
@@ -29,7 +31,8 @@ def download_youtube_playlist(playlist_url, download_path):
 def main():
     st.title("YouTube Downloader")
     drive = st.selectbox("Select Drive to Store:", options=['C:', 'D:', 'E:', 'F:', 'G:'])
-    download_path = os.path.join(drive, 'Hablu Progmmer javascript videos')
+    folder_name = 'Hablu Progmmer javascript videos'
+    download_path = os.path.join(drive, folder_name)
 
     choice = st.radio("Select an option:", ('Download a single video', 'Download a playlist', 'Show current path'))
 
