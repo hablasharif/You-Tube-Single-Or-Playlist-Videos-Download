@@ -39,7 +39,7 @@ def download_youtube_playlist(playlist_url):
 def main():
     st.title("YouTube Downloader")
 
-    choice = st.radio("Select an option:", ('Download a single video', 'Download a playlist'))
+    choice = st.radio("Select an option:", ('Download a single video', 'Download a playlist', 'Show current path'))
 
     if choice == 'Download a single video':
         video_url = st.text_input("Enter the YouTube video URL:")
@@ -57,6 +57,9 @@ def main():
                 st.success("Playlist downloaded successfully!")
             else:
                 st.warning("Please enter a valid URL.")
+    elif choice == 'Show current path':
+        current_path = os.getcwd()
+        st.write(f"The files are being saved in: {current_path}")
 
 if __name__ == "__main__":
     main()
