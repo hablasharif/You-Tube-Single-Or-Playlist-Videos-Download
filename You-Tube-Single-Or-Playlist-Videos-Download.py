@@ -1,3 +1,58 @@
+
+# import pytube
+# import tqdm
+# import os  # Import the 'os' module for file and directory operations
+
+# def download_youtube_video(video_url):
+#     """Downloads a single YouTube video to the 'Hablu Progmmer javascript videos' folder.
+
+#     Args:
+#         video_url: The URL of the YouTube video to download.
+#     """
+#     # Create the 'Hablu Progmmer javascript videos' folder if it doesn't exist
+#     if not os.path.exists('Hablu Progmmer javascript videos'):
+#         os.makedirs('Hablu Progmmer javascript videos')
+    
+#     # Change the working directory to the 'Ani2sul Islam' folder
+#     os.chdir('Hablu Progmmer javascript videos')
+    
+#     video = pytube.YouTube(video_url)
+#     video.streams.get_highest_resolution().download()
+
+# def download_youtube_playlist(playlist_url):
+#     """Downloads a YouTube playlist to the 'Hablu Progmmer javascript videos' folder.
+
+#     Args:
+#         playlist_url: The URL of the YouTube playlist to download.
+#     """
+#     # Create the 'Hablu Progmmer javascript videos' folder if it doesn't exist
+#     if not os.path.exists('Hablu Progmmer javascript videos'):
+#         os.makedirs('Hablu Progmmer javascript videos')
+    
+#     # Change the working directory to the 'Hablu Progmmer javascript videos' folder
+#     os.chdir('Hablu Progmmer javascript videos')
+    
+#     playlist = pytube.Playlist(playlist_url)
+#     for video in tqdm.tqdm(playlist.videos):
+#         video.streams.get_highest_resolution().download()
+
+# if __name__ == "__main__":
+#     choice = input("Enter '1' to download a single video, '2' to download a playlist: ")
+
+#     if choice == '1':
+#         video_url = input("Enter the YouTube video URL: ")
+#         download_youtube_video(video_url)
+#     elif choice == '2':
+#         playlist_url = input("Enter the YouTube playlist URL: ")
+#         download_youtube_playlist(playlist_url)
+#     else:
+#         print("Invalid choice. Please enter '1' or '2'.")
+
+
+
+
+
+
 import streamlit as st
 import pytube
 import tqdm
